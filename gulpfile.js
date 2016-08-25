@@ -36,7 +36,7 @@ function targetTask(){
       cwd : './node_modules/angular-ui-publisher',
       stdio: 'inherit'
     }).on('close', done);
-  }
+  };
 }
 
 gulp.task('build', targetTask('build'));
@@ -112,14 +112,14 @@ gulp.task('ngmin', function () {
 // LINTING
 //////////////////////////////////////////////////////////////////////////////
 
-gulp.task('jshint:src', function(done){
+gulp.task('jshint:src', function(){
   return gulp.src('./src/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'));
 });
 
-gulp.task('jshint:test', function(done){
+gulp.task('jshint:test', function(){
   return gulp.src('./test/*.spec.js')
     .pipe($.jshint({
       globals: {
